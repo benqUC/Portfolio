@@ -116,7 +116,12 @@
                 </div>
             </div>
             <div class="work">
-                <img src="images/HalfspaceFogMiniEngine.jpg" alt="HalfspaceFogMiniEngine">
+                <img src="images/PhasmophobiaTheBoardGame.png" alt="HalfspaceFogMiniEngine">
+                <div class="layer">
+                    <h3>Halfspace Fog MiniEngine Graphical Project</h3>
+                    <p>Implemented Halfspace fog using a custom mini game engine with C++ and GLSL.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
             </div>
         </div>
         <a href="#" class="btn">See more</a>
@@ -136,8 +141,9 @@
                 <a href="images/Computer Scientist - Department of the Interior BenQ Job Resume.pdf" download class="btn btn2">Download Resume</a>
             </div>
             <div class="contact-right">
-                <form name="submit-to-google-sheet">
+                <form name="submit-to-google-sheet" onsubmit="putDate(this);">
                     <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="hidden" name="Date" />
                     <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
@@ -185,15 +191,19 @@
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyaSriOLEXOCaMWtdoe4SDkAg3J7cTG_XyFPKBvMeTXvN695lLvexfRu7rE2ggFeu5b/exec'
     const form = document.forms['submit-to-google-sheet']
     const msg = document.getElementById("msg")
+    // var putDate = function(form){
+    //     form.date.value = new Date().toLocaleDateString("en-US")
+    // }
   
     form.addEventListener('submit', e => {
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => {
-            msg.innerHTML = "Message sent successfully"
-            setTimeout(function(){
-                msg.innerHTML =""
-            }, 5000)
+            alert("Submitted");
+            // msg.innerHTML = "Message sent successfully"
+            // setTimeout(function(){
+            //     msg.innerHTML =""
+            // }, 5000)
             form.reset()
         })
         // console.log('Success!', response))
