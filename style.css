@@ -29,6 +29,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: sticky;
 }
 
 nav ul li{
@@ -59,6 +60,22 @@ nav ul li a::after{
 nav ul li a:hover::after{
     width: 100%;
 }
+
+#navbar {
+    overflow: hidden;
+    background-color: #333;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 80%;
+}
+
+/* .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+} */
+
 .header-text{
     margin-top: 20%;
     font-size: 30px;
